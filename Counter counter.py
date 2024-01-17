@@ -11,11 +11,18 @@ while True:
     except:
         print("\033[F\033[K", end="")
 while True:
+    countTime = input("After how many counts should a new counter start? ")
+    try:
+        countTime = int(countTime)
+        break
+    except:
+        print("\033[F\033[K", end="")
+while True:
     values = [str(variables[var_name]) for var_name in variables]
     print(" ".join(values))
     variables[str(x)] += 1
     for _ in range(len(variables)):
-        if variables[str(x)] == 10:
+        if variables[str(x)] == countTime:
             x += 1
             if not str(x) in variables:
                 variables[str(x)] = 0
